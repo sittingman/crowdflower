@@ -27,18 +27,18 @@
     
 ### Outline of Approach
 
-    1. Define probleem type, understand data structure
-        - This is a multilabel classification problems in which features are in form of text string.
-        - Identify missing values under product_description. Assign "none" for those
-    2. Data Cleansing/Wrangling
-        - Perprocessing both product title and description with the following steps
-            - Remove stopworsds, puntuncation, numeric values
-            - Lemmatization to get stem root
-            - Combine both product title and description into one column, convert back to text string
-            - Apply TfidVectorizer to find keywords, based on median relevance score
-    3. Exploratory/Feature Creation
-        - Compare query entry with processed text string and obtain text string simiarlity. Two methods are used
-            - Spacy similarity score
-            - Fuzzywuzzy partial ratio
-        - Binary variables based on keywords identified by TfidVectorizer
+1. Define probleem type, understand data structure
+   - This is a multilabel classification problems in which features are in form of text string.
+   - Identify missing values under product_description. Assign "none" for those
+2. Data Cleansing/Wrangling
+   - Perprocessing both product title and description with the following steps
+        - Remove stopworsds, puntuncation, numeric values
+        - Lemmatization to get stem root
+        - Combine both product title and description into one column, convert back to text string
+        - Apply TfidVectorizer to find keywords, based on median relevance score
+3. Exploratory/Feature Creation
+    - Compare query entry with processed text string and obtain text string simiarlity. Two methods are used
+        - Spacy similarity score
+        - Fuzzywuzzy partial ratio
+    - Binary variables based on keywords identified by TfidVectorizer
             
