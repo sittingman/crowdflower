@@ -32,13 +32,27 @@
    - Identify missing values under product_description. Assign "none" for those
 2. Data Cleansing/Wrangling
    - Perprocessing both product title and description with the following steps
-        - Remove stopworsds, puntuncation, numeric values
-        - Lemmatization to get stem root
-        - Combine both product title and description into one column, convert back to text string
-        - Apply TfidVectorizer to find keywords, based on median relevance score
+      - Remove stopworsds, puntuncation, numeric values
+      - Lemmatization to get stem root
+      - Combine both product title and description into one column, convert back to text string
+      - Apply TfidVectorizer to find keywords, based on median relevance score
 3. Exploratory/Feature Creation
-    - Compare query entry with processed text string and obtain text string simiarlity. Two methods are used
-        - Spacy similarity score
-        - Fuzzywuzzy partial ratio
-    - Binary variables based on keywords identified by TfidVectorizer
-            
+   - Compare query entry with processed text string and obtain text string simiarlity. Two methods are used
+      - Spacy similarity score
+      - Fuzzywuzzy partial ratio
+   - Binary variables based on keywords identified by TfidVectorizer
+   - Category variable based on query word counts
+   - Findings: High median relevance appears to have higer similarity and fuzzywuzzy score. Longer search query has lower average median score
+4. Machine Learning
+   - Applied dataset into Logistics Regressioin, Support Vector Machine, Random Forecast, and Extreme Gradient Boosting
+   - Base models performance suggested that 
+   - Model Performance Summary (Kappa, weights='quadratic')
+   | Model | Base | Tunned | Kaggle | Time |
+   | Logistics Reg | 0.494 | 0.499 | 0.497 | 1s |
+   | SVC | 0.511 | 0.514 | 10s |
+   | ExtraTree | 0.564 | 0.567 |
+   | Random Forecast | 0.555 | 0.564 |
+   | XGBoost | 
+   
+   
+Recommendations/Next Steps
