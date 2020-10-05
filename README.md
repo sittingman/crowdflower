@@ -47,7 +47,9 @@
    - Applied dataset into Logistics Regressioin, Support Vector Machine, Random Forecast, and Extreme Gradient Boosting
    - Base models performance suggested that 
    - Model Performance Summary (Kappa, weights='quadratic')
+   
    | Model | Base | Tunned | Kaggle | Time |
+   | --- | --- | --- | --- |--- |
    | Logistics Reg | 0.494 | 0.499 | 0.497 | 1s |
    | SVC | 0.511 | 0.514 | 10s |
    | ExtraTree | 0.564 | 0.567 |
