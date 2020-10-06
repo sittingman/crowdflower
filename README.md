@@ -30,20 +30,20 @@
 1. Define probleem type, understand data structure
    - This is a multilabel classification problems in which features are in form of text string.
    - Identify missing values under product_description. Assign "none" for those
-2. Data Cleansing/Wrangling
+2. [Data Cleansing/Wrangling](https://github.com/sittingman/crowdflower/blob/master/1.data_expo.ipynb)
    - Perprocessing both product title and description with the following steps
       - Remove stopworsds, puntuncation, numeric values
       - Lemmatization to get stem root
       - Combine both product title and description into one column, convert back to text string
       - Apply TfidVectorizer to find keywords, based on median relevance score
-3. Exploratory/Feature Creation
+3. [Exploratory/Feature Creation](https://github.com/sittingman/crowdflower/blob/master/1.data_expo.ipynb)
    - Compare query entry with processed text string and obtain text string simiarlity. Two methods are used
       - Spacy similarity score
       - Fuzzywuzzy partial ratio
    - Binary variables based on keywords identified by TfidVectorizer
    - Category variable based on query word counts
    - Findings: High median relevance appears to have higer similarity and fuzzywuzzy score. Longer search query has lower average median score
-4. Machine Learning
+4. [Machine Learning](https://github.com/sittingman/crowdflower/blob/master/2.mach_learn.ipynb)
    - Applied dataset into Logistics Regressioin, Support Vector Machine, Random Forecast, and Extreme Gradient Boosting
    - Base models performance suggested that 
    - Model Performance Summary (Kappa, weights='quadratic')
@@ -54,7 +54,15 @@
    | SVC | 0.511 | 0.514 | 10s |
    | ExtraTree | 0.564 | 0.567 |
    | Random Forecast | 0.555 | 0.564 |
-   | XGBoost | 
+   | XGBoost | 0.560 | 
    
    
-Recommendations/Next Steps
+### Recommendations/Next Steps
+
+Tree based ensemble models such as ExtraTrees and Random Forecast performed the best in this analysis. From the absolute quadratic kappa score standpoint, ExtraTree perform the best and will be the winning model.
+
+Note that the dataset target attribute is imbalanced, with 60% of rating being 4. We may form an assumption that users tend to give positive when they find the query result useful, but may not even give any rating when the search results are bad, which explained why only 8% of ratings were 1. Clients can leverage the result in two ways:
+- Study the query results of 4, identify key drivers on why those results had good rating, and apply that search algorithm into more product categories
+- Study the query results of 1, plus queries that didn't have rating, to draw key drivers on why the search results were not useful, and improve search algorithms on those
+
+One more powerful information that would be great to obtain is whether the product recommended results in a purchases. This information would help narrow down the most effective query/product combination, which will help clients to improve conversion on their site.
