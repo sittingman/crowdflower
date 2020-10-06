@@ -48,13 +48,13 @@
    - Base models performance suggested that 
    - Model Performance Summary (Kappa, weights='quadratic')
    
-   | Model | Base | Tunned | Kaggle | Time |
-   | --- | --- | --- | --- |--- |
-   | Logistics Reg | 0.494 | 0.499 | 0.497 | 4s |
-   | SVC | 0.511 | 0.514 | 0.483 | 4m 20s |
-   | ExtraTrees | 0.564 | 0.567 | 0.554 | 3m 40s |
-   | Random Forecast | 0.554 |  | 0.539 | 3m 14s |
-   | XGBoost | 0.570 | 
+   | Model | Kaggle | Time |
+   | --- | --- |--- |
+   | Logistics Reg | 0.497 | 4s |
+   | SVC  | 0.483 | 4m 20s |
+   | ExtraTrees | 0.554 | 3m 40s |
+   | Random Forecast | 0.539 | 3m 14s |
+   | XGBoost | 0.532 | 9m 3s |
    
    
 ### Recommendations/Next Steps
