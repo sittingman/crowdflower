@@ -65,3 +65,5 @@ Note that the dataset target attribute is imbalanced, with 60% of rating being 4
 - Study the query results of 1, plus queries that didn't have a rating, to draw key drivers on why the search results were not useful, and improve search algorithms on those
 
 One more powerful information to obtain is whether the product recommended results in purchases. This information would help narrow down the most effective query/product combination, which will help clients to improve conversion on their site.
+
+### [Capstone Report](https://github.com/sittingman/crowdflower/blob/master/Capstone%20Report_crowdflower.pdf)
