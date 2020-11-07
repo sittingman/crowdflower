@@ -45,12 +45,11 @@
    - Findings: High median relevance appears to have high similarity and fuzzywuzzy score. Longer search query has a lower average median score
 4. [Machine Learning](https://github.com/sittingman/crowdflower/blob/master/2.mach_learn.ipynb)
    - Applied dataset into Logistics Regression, Support Vector Machine, Random Forecast, and Extreme Gradient Boosting
-   - Base models performance suggested that 
    - Model Performance Summary (Kappa, weights='quadratic')
    
    | Model | Kaggle | Time |
    | --- | --- |--- |
-   | Logistics Reg | 0.497 | 4s |
+   | Logistic Regression | 0.497 | 4s |
    | SVC  | 0.483 | 4m 20s |
    | ExtraTrees | 0.554 | 3m 40s |
    | Random Forecast | 0.539 | 3m 14s |
